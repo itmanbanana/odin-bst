@@ -231,7 +231,7 @@ class Tree {
     }
     height(v) {
         if (!this.includes(v))
-            return undefined;
+            return -1;
         let node = this.root;
         const depthRelative = (d, n) => {
             if (!n)
@@ -247,6 +247,7 @@ class Tree {
             else
                 node = node.leftChild;
         }
+        return -1;
     }
     depth(v) {
         if (!this.includes(v))

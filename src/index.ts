@@ -218,8 +218,8 @@ class Tree {
     while(q.length) callback(q.shift()!.value);
   }
 
-  height(v: number) {
-    if (!this.includes(v)) return undefined;
+  height(v: number): number {
+    if (!this.includes(v)) return -1;
     let node = this.root;
 
     const depthRelative = (d: number, n?: Node): number => {
@@ -234,6 +234,8 @@ class Tree {
       else if (v > node.value) node = node.rightChild;
       else node = node.leftChild;
     }
+
+    return -1;
   }
 
   depth(v: number) {
